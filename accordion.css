@@ -1,16 +1,11 @@
-/* body {
-	background-color: #6DC4F4;
-}h1 { 
-     color:white;
- 
-} */
-
+/* General container styling */
 .container {
   width: 80%;
   max-width: 600px;
   margin: 50px auto;
 }
 
+/* Accordion button styling */
 button.accordion {
   width: 100%;
   background-color: whitesmoke;
@@ -21,26 +16,37 @@ button.accordion {
   font-size: 18px;
   color: #333;
   cursor: pointer;
-  transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear, box-shadow 0.2s linear;
+  border-radius: 4px; /* Added rounded corners for modern design */
 }
 
+/* Icon styling for closed state */
 button.accordion:after {
   font-family: FontAwesome;
-  content: "\f150";
-  font-family: "fontawesome";
+  content: "\f150"; /* Down arrow */
   font-size: 18px;
   float: right;
 }
 
+/* Icon styling for open state */
 button.accordion.is-open:after {
-  content: "\f151";
+  content: "\f151"; /* Up arrow */
 }
 
+/* Hover and open state styling */
 button.accordion:hover,
 button.accordion.is-open {
   background-color: #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a slight shadow effect */
 }
 
+/* Focus state styling for accessibility */
+button.accordion:focus {
+  outline: 2px solid #007BFF; /* Blue focus ring for visibility */
+  background-color: #e6f7ff; /* Light blue background to indicate focus */
+}
+
+/* Accordion content styling */
 .accordion-content {
   background-color: white;
   border-left: 1px solid whitesmoke;
@@ -48,5 +54,30 @@ button.accordion.is-open {
   padding: 0 20px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.2s ease-in-out, padding 0.2s ease-in-out;
+  border-radius: 0 0 4px 4px; /* Matches the button for seamless design */
+}
+
+/* Typography within content */
+.accordion-content p {
+  margin: 0;
+  padding: 15px 0;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Optional global styling for body and headings */
+body {
+  background-color: #f4f8fb; /* Light background for contrast */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
